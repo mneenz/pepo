@@ -1,0 +1,56 @@
+/*Forms*/
+
+.input-style, input[type=text], input[type=email], textarea, select, select option, textarea {
+  background: $green;
+  color: black;
+  font-family: $quadraat-sans-font !important;
+  @include transition(.5s); /*Taken from mixin.scss*/
+  border: none;
+  padding: 6px;
+  @include size(12, 14);
+  max-width: 100%;
+  overflow: hidden;
+
+  &::-webkit-input-placeholder {
+    color: white !important;
+  }
+
+  &:-moz-placeholder {
+    color: white !important;
+  }
+
+  &::-moz-placeholder {
+    color: white !important;
+  }
+
+  &:-ms-input-placeholder {
+    color: white !important;
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    outline: 0;
+    background: $dark-green;
+  }
+}
+
+input[type=submit] {
+   background: $red;
+   border: none;
+   text-align: center;
+   float: right;
+   clear: both;
+   display: block;
+   overflow: hidden;
+   color: white;
+   padding: 7px;
+   @include size(12, 14);
+   @include transition(.5s); /*Taken from mixin.scss*/
+   font-family: $quadraat-sans-font;
+   cursor:pointer;
+
+   &:hover {
+     background:darken( $red, 10% );
+   }
+ }

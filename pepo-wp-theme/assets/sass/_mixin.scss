@@ -1,0 +1,223 @@
+/*! MIXIN  */
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+  -moz-transform: rotate($degrees);
+  -ms-transform: rotate($degrees);
+  -o-transform: rotate($degrees);
+  transform: rotate($degrees);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=#{-1*sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)})";
+  filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=#{-1*sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)});
+}
+
+@mixin translate($scale) {
+  -webkit-transform: translateY(-50%) scale($scale);
+  -moz-transform: translateY(-50%) scale($scale);
+  -ms-transform: translateY(-50%) scale($scale);
+  -o-transform: translateY(-50%) scale($scale);
+  transform: translateY(-50%) scale($scale);
+}
+
+@mixin scale($zoom) {
+  -webkit-transform: scale($zoom);
+  -moz-transform: scale($zoom);
+  -ms-transform: scale($zoom);
+  -o-transform: scale($zoom);
+  transform: scale($zoom);
+}
+
+@mixin translateCenter($center) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate($center,$center);
+  -webkit-transform: translate($center,$center);
+  -moz-transform: translate($center,$center);
+  -ms-transform: translate($center,$center);
+  -o-transform: translate($center,$center);
+}
+
+
+@-webkit-keyframes moveUp {
+  0% { }
+  100% { -webkit-transform: translateY(0); opacity: 1;}
+}
+
+@keyframes moveUp {
+  0% { }
+  100% { -webkit-transform: translateY(0); transform: translateY(0); opacity: 1; }
+}
+
+.moveUp {
+  opacity:0;
+  -webkit-transform: translateY(200px); /*Taken from mixin.scss*/
+  transform: translateY(200px) ; /*Taken from mixin.scss*/
+  -moz-transform: translateY(200px); /*Taken from mixin.scss*/
+  -moz-animation:  moveUp 1s ease forwards; /*Taken from mixin.scss*/
+  -webkit-animation: moveUp 1s ease forwards; /*Taken from mixin.scss*/
+  animation: moveUp 1s ease forwards; /*Taken from mixin.scss*/
+}
+
+@-moz-keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@mixin animation($fadein) {
+-webkit-animation: fadeIn $fadein; /* Safari, Chrome and Opera > 12.1 */
+   -moz-animation: fadeIn $fadein; /* Firefox < 16 */
+    -ms-animation: fadeIn $fadein; /* Internet Explorer */
+     -o-animation: fadeIn $fadein; /* Opera < 12.1 */
+        animation: fadeIn $fadein;
+}
+
+
+.nav_btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  padding: 0;
+  border-radius: 9px;
+  cursor: pointer;
+  display: block;
+  background: white;
+  height: 17px;
+  width: 17px;
+  box-sizing: border-box;
+  z-index: 101;
+  @include transition(max-width .5s); /*Taken from mixin.scss*/
+  background-color:$grey;
+
+  &:hover {
+    background: black;
+
+    span.menu_icon.slicknav span.menu_icon-bar {
+      background-color:white;
+    }
+  }
+
+  span.menu_icon.slicknav {
+    position: absolute;
+    right: 3px;
+    cursor: pointer;
+
+    span.menu_icon-bar {
+      display: block;
+      height: 2px;
+      background-color: white;
+      @include transition(.5s); /*Taken from mixin.scss*/
+    }
+  }
+}
+
+.spinner {
+	display:block;
+	position: fixed;
+	left: 50%;
+	top: 40%;
+	margin: -16px 0 0 -16px;
+	width:64px;
+	height:64px;
+
+  @media screen and (max-width : 1025px) {
+    left:45%;
+		width:20%;
+		height:auto;
+		top:45%;
+		max-width:64px;
+  }
+}
+
+.loading {
+	opacity:0;
+}
+
+/*Index cursor on index page and single projects page*/
+
+h4.index-cursor {
+  position: relative;
+  text-align: center;
+  padding: 12px;
+  height: 16px;
+  width: 140px;
+  z-index: 200;
+  color: black;
+  position: absolute;
+  padding: 10px;
+  cursor:pointer;
+  margin-top: 0;
+  @include transition(.5s); /*Taken from mixin.scss*/
+
+  @media screen and (min-width: 0px) and (max-width : 2110px) {
+    left: 111px !important;
+  }
+
+  &:hover {
+    margin-bottom: 10px !important;
+    margin-top: -10px !important;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    z-index: -1;
+    background: white;
+    -webkit-transform: skew(0deg, 6deg);
+    -moz-transform: skew(0deg, 6deg);
+    -ms-transform: skew(0deg, 6deg);
+    -o-transform: skew(0deg, 6deg);
+    transform: skew(0deg, 6deg);
+    border: 1px solid green;
+    border-right: 0;
+    color: black;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    z-index: -1;
+    color: black;
+    background: white;
+    -webkit-transform: skew(0deg, -6deg);
+    -moz-transform: skew(0deg, -6deg);
+    -ms-transform: skew(0deg, -6deg);
+    -o-transform: skew(0deg, -6deg);
+    transform: skew(0deg, -6deg);
+    border-top: 1px solid green;
+    border-bottom: 1px solid green;
+    border-right: 1px solid green;
+  }
+
+  a, a:hover, a:active, a:visited {
+    color:black !important;
+    display: block;
+    padding: 10px 0;
+    margin: -10px 0;
+  }
+}

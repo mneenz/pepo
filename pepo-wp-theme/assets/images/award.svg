@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#DBCB00;}
+	.st1{clip-path:url(#SVGID_2_);fill:#FFFFFF;}
+</style>
+<polygon class="st0" points="15,1 12.7,12.7 18.5,12.7 "/>
+<polygon class="st0" points="1,15 12.7,17.3 12.7,11.5 "/>
+<polygon class="st0" points="5.7,25.5 15.6,18.9 11.5,14.8 "/>
+<polygon class="st0" points="4.9,5.7 11.5,15.6 15.6,11.5 "/>
+<polygon class="st0" points="12.7,17.3 16.2,29 18.5,17.3 "/>
+<polygon class="st0" points="17.3,17.3 29,13.8 17.3,11.5 "/>
+<polygon class="st0" points="24.6,4.9 14.7,11.5 18.9,15.6 "/>
+<polygon class="st0" points="25.5,24.6 18.9,14.7 14.8,18.9 "/>
+<g>
+	<defs>
+		<rect id="SVGID_1_" x="1" y="1" width="27.9" height="27.9"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<path class="st1" d="M15,22c3.9,0,7-3.1,7-7s-3.1-7-7-7s-7,3.1-7,7S11.1,22,15,22"/>
+</g>
+</svg>

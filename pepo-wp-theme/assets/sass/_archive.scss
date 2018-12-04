@@ -1,0 +1,116 @@
+/*! ARCHIVE PAGE  */
+
+div#cover-projects {
+  background:white;
+  width:100%;
+  display:block;
+  overflow:hidden;
+}
+
+.listed-posts {
+  max-width: 1800px; /*Change this to 1024px when doing responsive version*/
+  margin: 0px auto;
+  box-sizing: border-box;
+  padding: 3.5% 1%;
+
+  .post-category {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    padding: 0 1% 3.5% 1%;
+    width: 33%;
+    box-sizing: border-box;
+  }
+
+  &> article:nth-child(2) {
+    width: 65.5% !important;
+    padding: 0.5% 0% 0.5% 1.3% !important;
+
+    .featured-image {
+      padding-top:0 !important;
+      border-top:0 !important;
+
+      a {
+        margin-top:0;
+      }
+    }
+  }
+
+  .post-item {
+    @extend .post-category;
+    width: 33.1%;
+    padding: 0.5% 1%;
+    -webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+    animation-delay: 2s;
+    opacity:0;
+    -webkit-transform: translateY(200px); /*Taken from mixin.scss*/
+    transform: translateY(200px) ; /*Taken from mixin.scss*/
+    -moz-transform: translateY(200px); /*Taken from mixin.scss*/
+    -moz-animation:  moveUp 1s ease forwards ; /*Taken from mixin.scss*/
+    -webkit-animation: moveUp 1s ease forwards; /*Taken from mixin.scss*/
+    animation: moveUp 1s ease forwards; /*Taken from mixin.scss*/
+
+    .featured-image {
+      position: relative;
+      overflow:hidden;
+      display:block;
+
+      a {
+        margin-top: 15px;
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        clear: both;
+
+        img:not(.project-icon) {
+          width: 100%;
+          height:auto;
+          -webkit-transform: scale(1);
+        	transform: scale(1);
+          @include transition(.5s); /*Taken from mixin.scss*/
+          @include scale(1); /*Taken from mixin.scss*/
+          display: block;
+          overflow: hidden;
+          width: 100%;
+          clear: both;
+          box-sizing: border-box;
+          padding: 0;
+
+          &:hover {
+            @include scale(1.1); /*Taken from mixin.scss*/
+          }
+        }
+
+        img.project-icon {
+          position: absolute;
+          z-index: 2;
+          bottom: 15px;
+          background:white;
+          border-radius: 30px;
+          cursor:pointer;
+
+          &:hover {
+            background: $grey;
+          }
+
+          &:nth-child(2){
+            left: 15px;
+          }
+
+          &:nth-child(3){
+            left: 50px;
+          }
+        }
+      }
+    }
+
+    .introduction {
+      border-bottom: 1px solid $green;
+      padding-bottom: 15px;
+    }
+
+    a.read-more {
+      font-style: italic;
+    }
+  }
+}

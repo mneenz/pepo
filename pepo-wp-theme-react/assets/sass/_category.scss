@@ -1,0 +1,138 @@
+/*! CATEGORY PAGE  */
+
+body.archive {
+  background:url(./assets/images/Sample_STUDIO.jpg) black no-repeat;
+  background-size:100% auto;
+
+  section#content {
+    width: auto;
+    overflow-x:hidden;
+    display: block;
+    margin: 165px auto auto 250px;
+
+    header.header {
+      position: absolute;
+      top: 10%;
+
+      #sub-menu li {
+        vertical-align: top;
+        font-family: $primary-font;
+        @include size(12, 12);
+        border-bottom: 2px solid $link;
+        clear: both;
+        display:inline-block;
+        padding-bottom: 8px;
+        margin: 4px;
+      }
+    }
+
+    #grid {
+      width: 95%;
+      margin:0px !important;
+      position: relative;
+      display: block;
+      min-height:1000px;
+      padding-bottom:200px;
+
+      @media (max-width: 400px) {
+        .grid-sizer, .grid-item {
+          width: 320px !important
+        }
+      }
+
+      .grid-sizer {
+        width: 400px;
+      }
+
+      .grid-item {
+        padding:15px;
+        vertical-align: top;
+        float:left;
+        box-sizing: border-box;
+        width: 400px;
+        position:relative;
+        line-height: 0;
+        margin: 0;
+        top:100%;
+
+        &:first-of-type {
+          z-index: 1000;
+        }
+
+        &.animate {
+          -webkit-transition-duration: 0.65s !important;
+         -moz-transition-duration: 0.65s !important;
+          -ms-transition-duration: 0.65s !important;
+          -o-transition-duration: 0.65s !important;
+          transition-duration: 0.65s !important;
+        }
+
+        &:before {
+          content: none;
+          display:none;
+        }
+
+        a.post-link {
+          display: block;
+          position: relative;
+          line-height: 0;
+          margin: 0;
+          padding: 0;
+          background-position: 0;
+          background-size: 100% auto;
+          @include transition(.5s); /*Taken from mixin.scss*/
+          background-repeat: no-repeat;
+
+          img {
+            opacity: 0;
+            width: 100%;
+            height: auto;
+            line-height: 0;
+            margin: 0;
+            padding: 0;
+          }
+
+          &:hover {
+            background-color: $red;
+            background-blend-mode: multiply;
+            background-size:120% auto;
+            background-position: 10%;
+            @include transition(.5s); /*Taken from mixin.scss*/
+          }
+        }
+
+        h5 {
+          left: 10px;
+          top: 8px;
+
+          a {
+            color:white;
+          }
+        }
+      }
+
+      .infinite-wrap {
+        opacity:0;
+      }
+
+      .infinite-loader {
+        background:url('/wp-content/themes/letterbox-wordpress-theme/assets/images/Letterbox_LoaderAnimationCircle.svg');
+        width:64px;
+        height:64px;
+        background-size:cover;
+        background-repeat: no-repeat;
+        display:block;
+        position: absolute;
+        left: 48%;
+        bottom: 100px;
+      }
+
+    }
+  }
+
+  div#infinite-handle {
+    z-index: 10000;
+    position: absolute;
+    bottom: 0;
+  }
+}

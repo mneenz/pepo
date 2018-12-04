@@ -1,0 +1,71 @@
+/*! PROJECTS PAGE  */
+
+.listed-projects {
+  padding: 5% 0;
+  max-width: 1900px; /*Change this to 1024px when doing responsive version*/
+  margin: 0px auto;
+
+  .projects-category {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    padding: 0.5% 2% 0.5% 1%;
+    width: 34%;
+    box-sizing: border-box;
+  }
+
+  &> article:nth-child(2) {
+    width:66% !important;
+    padding-top:2%;
+
+    .featured-image {
+      padding-top:0 !important;
+      border-top:0 !important;
+    }
+  }
+
+  article.project {
+    @extend .projects-category;
+    width: 33.3%;
+    padding: 0.5% 2%;
+
+    .featured-image {
+      position: relative;
+      overflow:hidden;
+      display:block;
+      border-top: 1px solid green;
+      padding-top: 15px;
+
+      img:not(.project-icon) {
+        width: 100%;
+        height:auto;
+      }
+
+      img.project-icon {
+        position: absolute;
+        z-index: 2;
+        bottom: 15px;
+        background:white;
+        border-radius: 30px;
+        cursor:pointer;
+
+        &:hover {
+          background: $grey;
+          @include transition(.5s); /*Taken from mixin.scss*/
+        }
+
+        &:nth-child(2){
+          left: 15px;
+        }
+
+        &:nth-child(3){
+          left: 50px;
+        }
+      }
+    }
+
+    a.read-more {
+      font-style: italic;
+    }
+  }
+}

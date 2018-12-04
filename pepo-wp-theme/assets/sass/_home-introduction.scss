@@ -1,0 +1,195 @@
+/*! HOME PAGE  */
+
+html {
+  min-height: 100%;
+  margin-top:0 !important;
+
+  .home {
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-image:url(./assets/images/home-background-2.jpg);
+    display: block;
+    float: none;
+    height: 100%;
+    clear: both;
+    margin:0;
+    padding:0;
+    background-attachment: fixed;
+
+
+    #header_space {
+      top: 100px;
+      z-index: 2;
+      background: white;
+
+      -webkit-animation-duration: 9s;animation-duration: 9s;
+      -webkit-animation-fill-mode: forwards;animation-fill-mode: forwards;
+
+      @-webkit-keyframes BackgroundColor {
+        0% {background: transparent;border:1px solid transparent;}
+        90% {background: transparent;border:1px solid transparent;}
+        100% {background: white;border:1px solid $green;}
+      }
+
+      @-webkit-keyframes BackgroundColor {
+        0% {background: transparent;border:1px solid transparent;}
+        90% {background: transparent;border:1px solid transparent;}
+        100% {background: white;border:1px solid $green;}
+      }
+
+      -webkit-animation-name: BackgroundColor;
+      animation-name: BackgroundColor;
+
+      #branding.home-animation  {
+        -webkit-animation-duration: 9s;animation-duration: 9s;
+        -webkit-animation-fill-mode: forwards;animation-fill-mode: forwards;
+
+        @-webkit-keyframes BrandingHeight {
+          0% {max-width:150px; max-height:165px;}
+          92% {max-width:75px;max-height:76px;}
+          95% {max-width:75px;max-height:76px;}
+          100% {max-width:75px;max-height:76px;}
+        }
+
+        @keyframes BrandingHeight {
+          0% {max-width:150px; max-height:165px;}
+          92% {max-width:75px;max-height:76px;}
+          95% {max-width:75px;max-height:76px;}
+          100% {max-width:75px;max-height:76px;}
+        }
+
+        -webkit-animation-name: BrandingHeight;
+        animation-name: BrandingHeight;
+      }
+
+      #branding.home-animation img {
+        filter: brightness(500%);
+        width:150px;
+        height:165px;
+
+        -webkit-animation-duration: 9s;animation-duration: 9s;
+        -webkit-animation-fill-mode: forwards;animation-fill-mode: forwards;
+
+        @-webkit-keyframes LogoColor {
+          0% {z-index: 100;opacity:1;position: absolute;filter: brightness(500%);}
+          80% {z-index: 100;opacity:1;position: absolute;filter: brightness(500%);}
+          90% {filter: brightness(500%);opacity:0;z-index: 100;position: absolute;}
+          91% {filter: brightness(100%);opacity:0;z-index: 100;position: absolute;}
+          92% {filter: brightness(100%);opacity:0;position: relative;}
+          95% {filter: brightness(100%);opacity:1;position: relative;}
+          100% {filter: brightness(100%);opacity:1;position: relative;}
+        }
+
+        @keyframes LogoColor {
+          0% {z-index: 100;opacity:1;position: absolute;filter: brightness(500%);}
+          80% {z-index: 100;opacity:1;position: absolute;filter: brightness(500%);}
+          90% {filter: brightness(500%);opacity:0;z-index: 100;position: absolute;}
+          91% {filter: brightness(100%);opacity:0;z-index: 100;position: absolute;}
+          92% {filter: brightness(100%);opacity:0;position: relative;}
+          95% {filter: brightness(100%);opacity:1;position: relative;}
+          100% {filter: brightness(100%);opacity:1;position: relative;}
+        }
+
+        -webkit-animation-name: LogoColor;
+        animation-name: LogoColor;
+      }
+
+      #menu-main,.social-media-icons, .menu_btn {
+        opacity:0;
+        -webkit-animation-fill-mode: forwards;animation-fill-mode: forwards;
+
+        -webkit-animation-name: fadeIn;
+        animation-name: fadeIn;
+      }
+
+      #menu-main {
+        -webkit-animation-duration: 9s;animation-duration: 9s;
+      }
+
+      .social-media-icons, .menu_btn {
+        -webkit-animation-duration: 9s;animation-duration: 9s;
+      }
+
+      .searchspace {
+        opacity:0;
+      }
+    }
+
+    #contact-form {
+      opacity:0;
+      -webkit-animation-duration: 9s;animation-duration: 9s;
+      -webkit-animation-fill-mode: forwards;animation-fill-mode: forwards;
+
+      -webkit-animation-name: fadeIn;
+      animation-name: fadeIn;
+    }
+
+    @-webkit-keyframes fadeIn  {
+      0% {opacity: 0;}
+      90% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+
+    @keyframes fadeIn {
+      0% {opacity: 0;}
+      90% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+
+    section#content {
+
+      .headerContent {
+        display: block;
+        height: calc(100vh - 170px);
+        margin: 70px 300px;
+        position: relative;
+        max-width: 874px;
+        z-index: 2;
+
+        h1.introduction {
+          font-family: $primary-font;
+          margin:0;
+          @include size(60, 70);
+          color:white;
+
+          @media screen and (min-width: 0px) and (max-width : 1800px) {
+            @include size(45, 55);
+            margin-left:-90px;
+          }
+
+          -webkit-animation-duration: 8s;animation-duration: 8s;
+          -webkit-animation-fill-mode: forwards;animation-fill-mode: forwards;
+
+          @-webkit-keyframes fadeInOut {
+            0% {opacity: 0;}
+            30% {opacity: 0;}
+            40% {opacity: 1;}
+            90% {opacity: 1;}
+            100% {opacity: 0;}
+          }
+
+          @keyframes fadeInOut {
+            0% {opacity: 0;}
+            30% {opacity: 0;}
+            40% {opacity: 1;}
+            90% {opacity: 1;}
+            100% {opacity: 0;}
+          }
+
+          -webkit-animation-name: fadeInOut;
+          animation-name: fadeInOut;
+        }
+
+        .index-cursor  {
+          opacity:0;
+
+          -webkit-animation-duration: 9s;animation-duration: 9s;
+          -webkit-animation-fill-mode: forwards;animation-fill-mode: forwards;
+
+          -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+        }
+      }
+    }
+  }
+}

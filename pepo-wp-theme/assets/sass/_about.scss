@@ -1,0 +1,222 @@
+/*! ABOUT PAGE  */
+
+section.header {
+  width: 100%;
+  padding: 2%;
+  box-sizing: border-box;
+
+  @media screen and (min-width: 0px) and (max-width : 1800px) {
+    width: calc(100% + 90px);
+    margin-left: -90px;
+    padding-left: 90px;
+  }
+
+  section.header-content {
+    max-width: 1800px;
+    overflow: hidden;
+    display: block;
+    clear: both;
+    margin: 0px auto;
+    height: 100%;
+    padding: 0 1%;
+    box-sizing: border-box;
+
+    .people {
+      max-width: 484px;
+      width: 40%;
+      margin-right: 2%;
+      float: left;
+      display: block;
+      overflow: hidden;
+    }
+
+    section.staff {
+      float: left;
+      display: block;
+      overflow: hidden;
+      max-width: 700px;
+      width: 58%;
+
+      article.staff-member {
+        width: 32%;
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: top;
+        text-align: left;
+        box-sizing: border-box;
+        padding: 0 1% 1% 1%;
+
+        &:nth-child(2) {
+          margin-right: 5%;
+        }
+
+        div#staff-image {
+          position: relative;
+          line-height: 0;
+          cursor:pointer;
+
+          &:hover p {
+            opacity:1;
+          }
+
+          p {
+            opacity: 0;
+            position: absolute;
+            text-align: left;
+            top: 0%;
+            left: 0%;
+            @include size(14, 17);
+            color: white;
+            width: 100%;
+            height: 100%;
+            padding: 4%;
+            overflow: hidden;
+            background: rgba($dark-green, 0.7);
+            margin: 0;
+            box-sizing: border-box;
+            @include transition(.5s); /*Taken from mixin.scss*/
+          }
+        }
+
+        h4 {
+          color:white;
+
+          em {
+            text-transform: none;
+            font-family: $primary-font;
+            @include size(15, 18);
+            letter-spacing: 0;
+            font-weight: normal;
+            font-style: italic;
+          }
+        }
+      }
+    }
+  }
+}
+
+.left-column {
+  display: inline-block;
+  vertical-align: top;
+  width: 60%;
+
+  .category {
+    width:100% !important;
+    padding: 0 0 10px 0 !important;
+    line-height: 0;
+    height: 46px;
+    box-sizing: border-box;
+    margin-top: 10px !important;
+  }
+
+  h2.post-title {
+    min-width: 194px;
+    color: $green;
+    width: 19%;
+    min-width: 200px;
+  }
+
+  .main-text {
+    width: 78% !important;
+
+    @media screen and (min-width: 0px) and (max-width : 1800px) {
+      max-width: 550px;
+    }
+  }
+}
+
+.right-column {
+  display: inline-block;
+  vertical-align: top;
+  width: 39%;
+  margin-top: 10px !important;
+
+  section.awards {
+    margin-top: 20px;
+  }
+
+  ul li {
+    background-repeat: no-repeat;
+    background-size: 35px;
+    width: 23%;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 1% 0 0;
+
+    @media screen and (min-width: 0px) and (max-width : 1800px) {
+      width:48% !important;
+    }
+
+    &:before {
+      content: "";
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid black;
+      padding:0;
+      background-size: 35px 35px;
+      background-repeat:no-repeat;
+      box-sizing:border-box;
+      height:46px;
+    }
+
+    &.address:before {
+      background-image: url('./assets/images/location-icon.svg');
+    }
+
+    &.phone {
+      width:20%;
+
+      &:before {
+        background-image: url('./assets/images/phone-icon.svg');
+      }
+    }
+
+    &.email:before {
+      background-image: url('./assets/images/email-icon.svg');
+    }
+
+    &.question {
+      width: 32%;
+      padding-right: 0;
+
+      &:before {
+        background-image: url('./assets/images/question-mark.svg');
+      }
+
+      @media screen and (min-width: 0px) and (max-width : 1800px) {
+        width:30%;
+      }
+    }
+
+    &.award {
+      margin-top:10px;
+
+      h4 {
+        color:$green;
+      }
+
+      &:before {
+        background-image: url('./assets/images/award.svg');
+        border-bottom:0;
+        background-size: 46px;
+      }
+
+    }
+
+    p {
+      margin-top: 0;
+    }
+  }
+}
+
+div.index-cursor {
+  position: relative;
+  border-top: 1px solid black;
+  margin: 2% 0;
+
+  h4.index-cursor {
+    top: -24px !important;
+  }
+}

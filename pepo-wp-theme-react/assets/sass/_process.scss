@@ -1,0 +1,97 @@
+/*! PROCESS PAGE  */
+
+h4.index-cursor {
+  position: relative;
+  text-align: center;
+  padding: 12px;
+  height: 16px;
+  width: 140px;
+  z-index: 200;
+  color: black;
+  position: absolute;
+  bottom: -105px;
+  padding: 10px;
+  cursor:pointer;
+  right: 86%;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    z-index: -1;
+    background: white;
+    -webkit-transform: skew(0deg, 6deg);
+    -moz-transform: skew(0deg, 6deg);
+    -ms-transform: skew(0deg, 6deg);
+    -o-transform: skew(0deg, 6deg);
+    transform: skew(0deg, 6deg);
+    border: 1px solid green;
+    border-right: 0;
+    color: black;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    z-index: -1;
+    color: black;
+    background: white;
+    -webkit-transform: skew(0deg, -6deg);
+    -moz-transform: skew(0deg, -6deg);
+    -ms-transform: skew(0deg, -6deg);
+    -o-transform: skew(0deg, -6deg);
+    transform: skew(0deg, -6deg);
+    border-top: 1px solid green;
+    border-bottom: 1px solid green;
+    border-right: 1px solid green;
+  }
+}
+
+article.process {
+  display: block;
+  clear: both;
+  position: relative;
+  float: none;
+  background:white;
+  padding: 5% 0;
+  width:100%;
+  margin: 0px auto;
+  border-bottom: 1px solid $green;
+
+  section.process-content {
+    padding: 0;
+    max-width: 1900px; /*Change this to 1024px when doing responsive version*/
+    margin: 0px auto;
+
+    section.column {
+      width: 33.3%;
+      display: inline-block;
+      padding: 0 1%;
+      vertical-align: top;
+      box-sizing: border-box;
+      border-right: 1px solid $green;
+
+      &:last-of-type {
+        border-right:none;
+      }
+
+      h4:last-of-type {
+        border-top: 1px solid green;
+        padding-top: 10px;
+      }
+    }
+
+    h4.index-cursor {
+      right: 83.5%;
+      bottom: -22px;
+    }
+
+  }
+}

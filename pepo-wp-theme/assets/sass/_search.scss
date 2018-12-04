@@ -1,0 +1,95 @@
+/*------SEARCH & 404 PAGE PAGE-----*/
+
+input#s {
+  @extend h2; /*Taken from fonts.scss*/
+  @include transition(.5s); /*Taken from mixin.scss*/
+  box-sizing: border-box;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  clear: both;
+  color: black;
+  border: 0;
+  border-bottom: 1px solid black;
+  width: 100%;
+  height: auto;
+  text-transform: none;
+  display: inline-block;
+  margin: 0;
+
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid $green;
+  }
+}
+
+.search-input {
+  box-sizing: border-box;
+  padding: 10px;
+  text-decoration: none;
+  letter-spacing: 0.2pt;
+  background: transparent;
+  font-weight: 600;
+  position: absolute;
+  border: 0;
+  border-bottom: 1px solid white;
+  width: auto;
+  height: auto;
+  text-transform: none;
+
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid $green;
+  }
+
+  @media (max-width:415px) {
+    font-size: 22pt;
+    line-height: 24pt;
+  }
+}
+
+/*When you click on the search icon in the top menu*/
+&.form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100000;
+    background: rgba(0,0,0,0.9);
+    text-align: center;
+    display:none;
+    @include transition(.5s); /*Taken from mixin.scss*/
+
+    .close {
+      cursor:pointer;
+    }
+
+    input.search-input {
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+  }
+
+  .close {
+    position:absolute;
+    right:10%;
+    top:10%;
+    opacity: 0.5;
+    @include transition(.5s); /*Taken from mixin.scss*/
+
+    @media (max-width:1024px) {
+      right:1%;
+      top:1%;
+    }
+
+    &:hover {
+      opacity:1;
+    }
+  }
+}

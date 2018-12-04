@@ -1,0 +1,21 @@
+/*! TAG & Search ARCHIVE  */
+
+body.tag, body.search {
+
+  h2 {
+    color: black;
+
+    span {
+      color: $dark-green;
+    }
+  }
+
+  .listed-posts > article:nth-child(2) {
+    width: 33.2% !important;
+    padding: 0.5% 2% !important;
+
+    .featured-image a {
+      margin-top: 15px !important;
+    }
+  }
+}

@@ -1,0 +1,115 @@
+/*! MIXIN  */
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+  -moz-transform: rotate($degrees);
+  -ms-transform: rotate($degrees);
+  -o-transform: rotate($degrees);
+  transform: rotate($degrees);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=#{-1*sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)})";
+  filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=#{-1*sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)});
+}
+
+@mixin translate($scale) {
+  -webkit-transform: translateY(-50%) scale($scale);
+  -moz-transform: translateY(-50%) scale($scale);
+  -ms-transform: translateY(-50%) scale($scale);
+  -o-transform: translateY(-50%) scale($scale);
+  transform: translateY(-50%) scale($scale);
+}
+
+@-webkit-keyframes moveUp {
+  0% { }
+  100% { -webkit-transform: translateY(0); opacity: 1;}
+}
+
+@keyframes moveUp {
+  0% { }
+  100% { -webkit-transform: translateY(0); transform: translateY(0); opacity: 1; }
+}
+
+.moveUp {
+  opacity:0;
+  -webkit-transform: translateY(200px) !important;
+  transform: translateY(200px) !important;
+  -webkit-animation: moveUp 0.65s ease forwards !important;
+  animation: moveUp 0.65s ease forwards !important;
+}
+
+.nav_btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  padding: 0;
+  border-radius: 9px;
+  cursor: pointer;
+  display: block;
+  background: white;
+  height: 17px;
+  width: 17px;
+  box-sizing: border-box;
+  z-index: 101;
+  @include transition(max-width .5s); /*Taken from mixin.scss*/
+  background-color:$grey;
+
+  &:hover {
+    background: black;
+
+    span.menu_icon.slicknav span.menu_icon-bar {
+      background-color:white;
+    }
+  }
+
+  span.menu_icon.slicknav {
+    position: absolute;
+    right: 3px;
+    cursor: pointer;
+
+    span.menu_icon-bar {
+      display: block;
+      height: 2px;
+      background-color: white;
+      @include transition(.5s); /*Taken from mixin.scss*/
+    }
+  }
+}
+
+@-webkit-keyframes moveUp {
+  0% { }
+  100% { -webkit-transform: translateY(0); opacity: 1;}
+}
+
+@keyframes moveUp {
+  0% { }
+  100% { -webkit-transform: translateY(0); transform: translateY(0); opacity: 1; }
+}
+
+.spinner {
+	display:block;
+	position: fixed;
+	left: 50%;
+	top: 40%;
+	margin: -16px 0 0 -16px;
+	width:64px;
+	height:64px;
+
+  @media screen and (max-width : 1025px) {
+    left:45%;
+		width:20%;
+		height:auto;
+		top:45%;
+		max-width:64px;
+  }
+}
+
+.loading {
+	opacity:0;
+}

@@ -1,0 +1,88 @@
+/*!
+Theme Name: Letterbox Theme
+Author: Nina Mujdzic, Letterbox
+Author URI: http://neendreams.com/, http://letterbox.net.au/
+Version: 1.0
+*/
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{font-size:100%;font:inherit;padding:0;border:0;margin:0;vertical-align:baseline}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}.clear{clear:both}.sticky{}.bypostauthor{}.wp-caption{}.wp-caption-text{}.gallery-caption{}.alignright{}.alignleft{}.aligncenter{}
+
+
+@import "colors.scss"; /*Colors SASS file*/
+@import "mixin.scss"; /*Mixin SASS file*/
+@import "fonts.scss"; /*Fonts SASS file*/
+@import "menu.scss"; /*Menu SASS file*/
+@import "search.scss"; /*Search SASS file*/
+@import "home-introduction.scss"; /*Home SASS file*/
+@import "process.scss"; /*Home SASS file*/
+@import "projects.scss"; /*Home SASS file*/
+@import "slider.scss"; /*Slider SASS file*/
+@import "category.scss"; /*Category SASS file*/
+@import "single.scss"; /*Single SASS file*/
+@import "about.scss"; /*About Page SASS file*/
+
+
+body {
+	font-family:$primary-font;
+	font-size:13pt;
+	color:black;
+}
+
+@media screen and (min-width: 0px) and (max-width : 1024px) {
+
+	/*All Devices*/
+
+	html.touch *:hover {
+    	pointer-events: none !important;
+	}
+
+	html, body {
+		width:100% !important;
+		margin:0px !important;
+		overflow-x:hidden !important;
+		-webkit-text-size-adjust: none; /* Prevent font scaling in landscape */
+	}
+
+	body {
+		margin: 0 0 20px;
+		height:auto;
+		min-height:100%;
+	}
+}
+
+
+/*------MENU-----*/
+
+#branding {
+	float: left;
+}
+
+/*------CONTENT-----*/
+
+
+.home,
+.single,
+.home #wrapper,
+.home #container,
+.home #content,
+.single #wrapper,
+.single #container,
+.single #content {
+  	height: 100%;
+}
+
+#container {
+	width: 100%;
+	margin: 0;
+}
+
+.sidebar {
+	float: right;
+	width: 50%;
+}
+
+/*------FOOTER-----*/
+
+#footer {
+	width: 100%;
+}
